@@ -1,0 +1,93 @@
+<!-- Q.1 create a counter app using html css  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter app</title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        /* mainbox design  design*/
+        .main{
+            border: 2px solid black;
+            width: 500px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 7px;
+
+        }
+           /* display value  design*/
+        #Display{
+               font-size: 50px;
+               font-weight: bolder;
+
+        }
+        /*  btn design*/
+       .btn{
+        border: 2px solid black;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: bolder;
+        padding: 5px;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+     <div class="main">
+        <h1 id="heading">Counter App</h1>
+        <span id="Display">0</span>
+        <button class="btn"  id="Increment"">Increment by 1 
+        </button>
+        <button class="btn" id="Decrement">Decrement by 1</button>
+        <button class="btn" id="Reset" >Reset Value</button>
+     </div>
+    </div>
+</body>
+<script>
+        let DisplayValue =document.getElementById('Display')
+        let IncrementValue= document.getElementById('Increment')
+        let DecrementValue = document.getElementById('Decrement')
+        let ResetValue = document.getElementById('Reset')
+        
+        //increment of value through increment btn
+        IncrementValue.addEventListener('click',function(){
+            const value = Number(DisplayValue.innerText)
+            if(value>=10){
+                alert("10+ value is not allowed")
+            }
+            else{
+                DisplayValue.innerText=value+1;
+                
+            }
+        })
+
+         
+        //decrement of value through decrement btn
+
+        DecrementValue.addEventListener('click',function(){
+            const value = Number(DisplayValue.innerText)
+            if(value>0){
+                DisplayValue.innerText=value-1;
+            }
+            else{
+                alert("Negative value is not allowed")
+            }
+        })
+
+
+
+                //reset of value through reset btn
+                ResetValue.addEventListener('click',function(){
+                    DisplayValue.innerText= 0;
+                })
+</script>
+</html>

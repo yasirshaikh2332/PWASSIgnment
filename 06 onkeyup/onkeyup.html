@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyup snd keydown</title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #display{
+            color: red;
+            font-size: 50px;
+        }
+     
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div id="display">Press any Key</div>
+  </div>
+</body>
+<script>
+  let container= document.getElementsByClassName('container')
+  let display = document.getElementById('display')
+
+  //adding keydown event
+  document.addEventListener('keydown',function(e){
+    display.style.color = 'blue'
+    display.innerText =e.key + " is Keydown"
+  })
+
+  //adding keyup event
+
+  document.addEventListener('keyup',function(e){
+    display.style.color = 'green'
+    display.innerText =e.key + " is Keyup"
+  })
+</script>
+</html>

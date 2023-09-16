@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseover event in js</title>
+    <style>
+        #box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .mouseover{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p class="mouseover">Click me Twice</p>
+    </div>
+</body>
+<script>
+    const BoxElement = document.getElementById('box');
+    BoxElement.addEventListener('mouseover',function(){
+        alert("mouseover is working properly")
+    })
+</script>
+</html>
